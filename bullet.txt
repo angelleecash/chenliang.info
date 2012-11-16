@@ -1,0 +1,13 @@
+Bullet 碰撞检测的过程
+Broad phase
+我理解是大体上的碰撞处理，是指在碰撞过程中基于AABB快速的排除一些Pair。
+AABB axis aligned bounding box
+BroadPhase的结果是移除不需要进行碰撞处理的Pair，增加一些可能碰撞的Pair。
+碰撞检测的过程就是遍历上面产生的Pair，基于每个Pair中的物体的类型选择对应
+的算法，计算Contact Points。
+基于下图可以选择最适合的碰撞Shape。
+
+Rigid Body Dynamics
+在碰撞检测之上构建，增加了forces,mass,inertia,velocity and constraints.
+
+在Bullet里面，一个rigid body的world transform使用应用于它的质心。
